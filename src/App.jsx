@@ -16,6 +16,7 @@ const App = () => {
       return (currentIndex - 1 + data.length) % data.length;
     });
   };
+  const randomPerson = () => {};
 
   return (
     <main>
@@ -45,6 +46,9 @@ const App = () => {
             <FaChevronRight />
           </button>
         </div>
+        <button type="button" className="btn" onClick={randomPerson}>
+          surprise me!
+        </button>
       </article>
     </main>
   );
