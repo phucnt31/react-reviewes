@@ -6,8 +6,16 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const { id, image, job, name, text } = data[index];
 
-  const nextPerson = () => {};
-  const prevPerson = () => {};
+  const nextPerson = () => {
+    setIndex((currentIndex) => {
+      return (currentIndex + 1) % data.length;
+    });
+  };
+  const prevPerson = () => {
+    setIndex((currentIndex) => {
+      return (currentIndex - 1 + data.length) % data.length;
+    });
+  };
 
   return (
     <main>
@@ -18,17 +26,25 @@ const App = () => {
             <FaQuoteRight />
           </span>
         </div>
-        <div>
-          <h4 className="author">{name}</h4>
-          <p className="job">{job}</p>
-          <p className="info">{text}</p>
+        <h4 className="author">{name}</h4>
+        <p className="job">{job}</p>
+        <p className="info">{text}</p>
+        <div className="btn-container">
+          <button
+            type="button"
+            className="prev-btn"
+            onClick={() => prevPerson()}
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            type="button"
+            className="next-btn"
+            onClick={() => nextPerson()}
+          >
+            <FaChevronRight />
+          </button>
         </div>
-        <button type="button" className="prev-btn" onClick={() => prevPerson()}>
-          <FaChevronLeft />
-        </button>
-        <button type="button" className="next-btn" onClick={() => nextPerson()}>
-          <FaChevronRight />
-        </button>
       </article>
     </main>
   );
