@@ -1,10 +1,13 @@
 import { useState } from "react";
 import data from "./data";
-import { FaQuoteRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 const App = () => {
   const [index, setIndex] = useState(0);
   const { id, image, job, name, text } = data[index];
+
+  const nextPerson = () => {};
+  const prevPerson = () => {};
 
   return (
     <main>
@@ -20,6 +23,12 @@ const App = () => {
           <p className="job">{job}</p>
           <p className="info">{text}</p>
         </div>
+        <button type="button" className="prev-btn" onClick={() => prevPerson()}>
+          <FaChevronLeft />
+        </button>
+        <button type="button" className="next-btn" onClick={() => nextPerson()}>
+          <FaChevronRight />
+        </button>
       </article>
     </main>
   );
