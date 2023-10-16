@@ -16,7 +16,15 @@ const App = () => {
       return (currentIndex - 1 + data.length) % data.length;
     });
   };
-  const randomPerson = () => {};
+  const randomPerson = () => {
+    let randomNum = Math.floor(Math.random() * data.length);
+    if (randomNum === index) {
+      randomNum = index + 1;
+      setIndex(randomNum % data.length);
+      return;
+    }
+    setIndex(randomNum);
+  };
 
   return (
     <main>
