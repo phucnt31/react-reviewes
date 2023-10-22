@@ -1,8 +1,8 @@
 ## Introduction
 
-- A novice attempt in trying to build a basic project using local data but only render one person as a time, using previous and next button to shuffle through the data and show current person
+- A novice attempt in trying to build a basic React application with basic React knowledge, using local data from a JavaScript file that displays reviews of different individuals one at a time and provides navigation buttons to view the previous and next reviews.
 
-- https://react-vite-reviews.netlify.app
+- Reviews: https://react-vite-reviews.netlify.app
 
 ## Steps
 
